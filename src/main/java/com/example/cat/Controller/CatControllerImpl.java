@@ -2,10 +2,7 @@ package com.example.cat.Controller;
 
 import com.example.cat.DTO.CatDTO;
 import com.example.cat.Exception.CatNotFoundException;
-import com.example.cat.Response.CreateResponse;
-import com.example.cat.Response.DeleteResponse;
-import com.example.cat.Response.FindResponse;
-import com.example.cat.Response.UpdateResponse;
+import com.example.cat.Response.*;
 import com.example.cat.Service.CatServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,6 +25,11 @@ public class CatControllerImpl implements CatController {
     @Override
     public FindResponse<CatDTO> findCatByName(String name) throws CatNotFoundException {
         return catService.findCatByName(name);
+    }
+
+    @Override
+    public FindManyResponse<CatDTO> findCatIllness() {
+        return catService.findIllnessCats();
     }
 
     @Override

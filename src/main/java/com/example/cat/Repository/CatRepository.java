@@ -9,5 +9,5 @@ import java.util.Optional;
 
 public interface CatRepository extends JpaRepository<CatEntity, Long> {
     Optional<CatEntity> findByName(String name);
-    List<CatEntity> findCatEntitiesByDiseaseNull();
+    List<CatEntity> findCatEntitiesByDiseaseNotNull();
 }

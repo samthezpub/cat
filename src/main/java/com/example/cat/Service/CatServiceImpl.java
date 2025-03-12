@@ -35,7 +35,7 @@ public class CatServiceImpl implements CatService {
 
     @Override
     public FindManyResponse<CatDTO> findIllnessCats() {
-        return new FindManyResponse<CatDTO>(catMapper.toDtoList(catRepository.findCatEntitiesByDiseaseNull()), "Successfully found");
+        return new FindManyResponse<CatDTO>(catMapper.toDtoList(catRepository.findCatEntitiesByDiseaseNotNull()), "Successfully found");
     }
 
     @Override

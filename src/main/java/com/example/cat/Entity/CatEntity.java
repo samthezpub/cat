@@ -16,6 +16,6 @@ public class CatEntity {
     private Integer age;
     private String name;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.DETACH, CascadeType.MERGE})
     private DiseaseEntity disease;
 }

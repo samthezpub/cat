@@ -2,10 +2,7 @@ package com.example.cat.Controller;
 
 import com.example.cat.DTO.CatDTO;
 import com.example.cat.Exception.CatNotFoundException;
-import com.example.cat.Response.CreateResponse;
-import com.example.cat.Response.DeleteResponse;
-import com.example.cat.Response.FindResponse;
-import com.example.cat.Response.UpdateResponse;
+import com.example.cat.Response.*;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/cat")
@@ -14,14 +11,17 @@ public interface CatController {
     CreateResponse<CatDTO> createCat(@RequestBody CatDTO catDTO);
 
     @GetMapping("/find/{id}")
-    FindResponse<CatDTO> findCatById(@PathVariable Long id) throws CatNotFoundException;
+    FindResponse<CatDTO> findCatById(@PathVariable("id") Long id) throws CatNotFoundException;
 
     @GetMapping("/findByName/{name}")
-    FindResponse<CatDTO> findCatByName(@PathVariable String name) throws CatNotFoundException;
+    FindResponse<CatDTO> findCatByName(@PathVariable("name") String name) throws CatNotFoundException;
+
+    @GetMapping("/findIllness")
+    FindManyResponse<CatDTO> findCatIllness() throws CatNotFoundException;
 
     @PostMapping("/update")
     UpdateResponse<CatDTO> updateCat(@RequestBody CatDTO catDTO) throws CatNotFoundException;
 
     @DeleteMapping("/delete/{id}")
-    DeleteResponse deleteCat(@PathVariable Long id);
+    DeleteResponse deleteCat(@PathVariable("id") Long id);
 }
