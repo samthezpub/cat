@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @Builder
 @AllArgsConstructor
-public class UpdateResponse<T> {
+public class FindResponse<T> {
     private T dto;
     private String message;
 }

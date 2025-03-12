@@ -9,7 +9,6 @@ import lombok.Setter;
 @Setter
 @Builder
 @AllArgsConstructor
-public class FindResponse<T> {
-    private T dto;
+public class DeleteResponse {
     private String message;
 }

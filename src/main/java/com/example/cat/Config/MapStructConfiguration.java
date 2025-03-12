@@ -1,4 +1,7 @@
 package com.example.cat.Config;
 
-public class MapStructConfiguration {
+import org.mapstruct.MapperConfig;
+
+@MapperConfig(componentModel = "spring")
+public interface MapStructConfiguration {
 }
